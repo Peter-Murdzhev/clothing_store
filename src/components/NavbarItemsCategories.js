@@ -1,16 +1,30 @@
 "use client"
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import { FiX } from "react-icons/fi";
 
 export default function NavbarItemsCategories() {
     const [isOpen, setOpen] = useState(false);
+    const mobileMenuRef = useRef(null);
+
+    useEffect(() => {
+        function handleClick(e) {
+            if (mobileMenuRef.current && !mobileMenuRef.current.contains(e.target)) {
+                setOpen(false);
+            }
+        }
+
+        document.addEventListener("pointerdown", handleClick);
+        return () => document.removeEventListener("pointerdown", handleClick)
+    }, [])
 
     return (
         <div>
             <button className="nav_toggle"
                 onClick={() => setOpen(!isOpen)}>☰</button>
 
-            <ul className={`nav_list_mobile ${isOpen ? "opened" : ""}`}>
+            <ul ref={mobileMenuRef} className={`nav_list_mobile ${isOpen ? "opened" : ""}`}>
+                <FiX fontSize={20} className="remove_icon" onClick={() => setOpen(false)} />
                 <li onClick={() => setOpen(false)}><Link href="/">
                     <button className="nav_button">Home</button></Link> </li>
 
