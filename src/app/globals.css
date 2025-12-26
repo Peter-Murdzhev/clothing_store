@@ -836,3 +836,10 @@ body {
 
   /*order page to display already created order end*/
 }
+
+@media (min-width: 2560px){
+  .login_form{
+    top: 85%;
+    left: 80%;
+  }
+}
