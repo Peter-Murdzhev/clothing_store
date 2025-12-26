@@ -43,7 +43,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  position: relative;
 }
 
 .nav_toggle {
@@ -104,10 +103,10 @@ body {
   margin-left: auto;
   margin-right: 20px;
   color: white;
+  position: relative;
 }
 
 .icon {
-  position: relative;
   width: 26px;
   height: 26px;
 }
@@ -273,8 +272,8 @@ body {
   height: 200px;
   position: absolute;
   z-index: 1;
-  top: 85%;
-  left: 71.5%;
+  top: 110%;
+  right: 65%;
   padding: 10px;
   background-color: rgb(90, 152, 90);
 }
@@ -661,8 +660,8 @@ body {
     border: 1px solid #ccc;
     width: 200px;
     padding: 5px;
-    top: 71%;
-    left: 2%;
+    top: 44%;
+    left: 1%;
     z-index: 10;
   }
 
@@ -739,8 +738,8 @@ body {
 
   /* login  form component */
   .login_form {
-    top: 85%;
-    left: 20%;
+    top: 100%;
+    right: 70%;
   }
 
   /* login  form component end */
@@ -837,9 +836,3 @@ body {
   /*order page to display already created order end*/
 }
 
-@media (min-width: 2560px){
-  .login_form{
-    top: 85%;
-    left: 80%;
-  }
-}
