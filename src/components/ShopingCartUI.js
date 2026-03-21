@@ -36,14 +36,13 @@ export default function ShopingCartUI({ user }) {
 
                 cart.map((product, index) => (
                     <div key={index} className="shoping_cart_item">
-                        <FiX className="remove_icon" onClick={() => removeFromCart(product)} />
+                        <FiX className="remove_icon" onClick={() => removeFromCart(index)} />
                         <Link href={`/products/${product.id}`}>
                             <img src={product.images[0]}></img>
                             <p>{product.title}</p>
                             {["dresses", "shirts", "shoes"]
-                                .some(value => product.category.includes(value)) ?
-                                <p>Size: {product.size}</p> :
-                                <p></p>
+                                .some(value => product.category.includes(value)) &&
+                                <p>Size: {product.size}</p>
                             }
                             <p style={{ alignSelf: "flex-end" }}>{product.price}$</p>
                         </Link>

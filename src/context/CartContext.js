@@ -21,8 +21,8 @@ export const CartProvider = ({children}) =>{
         setCart(prev => [...prev, product]);
     }
 
-    const removeFromCart = (product) =>{
-        setCart(prev => prev.filter(item => item.id !== product.id));
+    const removeFromCart = (indexToRemove) =>{
+        setCart(prev => prev.filter((_, index) => index !== indexToRemove));
     }
 
     const clearCart = () =>{
